@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Wallet,
   TrendingUp,
@@ -8,15 +9,19 @@ import {
   Pizza,
   CreditCard,
 } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
 import { FeatureItem } from "../components/Login/FeatureItem";
 import { ExpenseItem } from "../components/Login/ExpenseItem";
 import { MoneyAnimation } from "../components/Login/MoneyAnimation";
 import { BrokeMessage } from "../components/Login/BrokeMessage";
 
 const Login = () => {
-  const { login } = useAuth();
+  const navigate = useNavigate();
   const [isHovering, setIsHovering] = useState(false);
+
+  const handleLoginClick = () => {
+    // Just navigate to dashboard directly
+    navigate("/dashboard");
+  };
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-slate-900 to-indigo-900 p-4 font-sans overflow-hidden relative">
@@ -122,7 +127,7 @@ const Login = () => {
           </div>
 
           <button
-            onClick={login}
+            onClick={handleLoginClick}
             className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-4 rounded-lg flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 font-button font-medium tracking-wide"
           >
             <svg
