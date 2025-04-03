@@ -1,0 +1,1 @@
+You should add a logo.png file to the public/images directory with a green money-themed logo

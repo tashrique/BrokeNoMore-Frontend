@@ -1,30 +1,28 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
-        button: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ["Inter", "sans-serif"],
+        display: ["Poppins", "sans-serif"],
+        button: ["Inter", "sans-serif"],
       },
       colors: {
-        // Updated color palette
         cyan: {
-          400: '#22d3ee',
-          500: '#06b6d4',
-        },
-        blue: {
-          400: '#60a5fa',
-          500: '#3b82f6',
+          400: '#34D1BF',
+          500: '#14B8A6',
         },
         amber: {
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
+          400: '#FBBF24',
+          500: '#F59E0B',
         },
       },
     },
   },
   plugins: [],
-};
+}; 

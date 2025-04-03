@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-800 to-slate-900 text-slate-200 antialiased;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.5);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.7);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 font-button font-medium tracking-wide;
+  }
+  
+  .card {
+    @apply bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20 hover:border-cyan-500/20 transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply flex items-center gap-3 p-3 rounded-lg transition-all duration-200 font-button;
+  }
+  
+  .nav-link-active {
+    @apply bg-gradient-to-r from-slate-700/80 to-slate-700/40 text-cyan-400 shadow-md;
+  }
+  
+  .nav-link-inactive {
+    @apply hover:bg-slate-700/30 text-slate-300 hover:translate-x-1;
+  }
+} 
